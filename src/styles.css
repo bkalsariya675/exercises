@@ -24,3 +24,85 @@
   top: 8px;
   left: 8px;
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  width: 100%;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  color: white;
+}
+
+.nav-links ul {
+  display: flex;
+  /* remove the list styling */
+  list-style-type: none;
+}
+
+.nav-links ul li a {
+  /* remove the underline */
+  text-decoration: none;
+  padding: 0.75rem;
+  color: white;
+  display: block;
+}
+
+.nav-links ul li a:hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+.toggle-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+}
+
+.toggle-button .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+  .toggle-button {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
